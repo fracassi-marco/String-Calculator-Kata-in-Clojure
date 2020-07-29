@@ -8,3 +8,10 @@
     (is (= sum 0))
   )
 )
+
+(deftest sum-one-value
+  (testing "sum one value"
+    (def sum (calculate "8"))
+    (is (= sum 8))
+  )
+)

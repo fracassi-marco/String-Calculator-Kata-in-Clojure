@@ -6,7 +6,9 @@
   [& args]
   (println "Hello, World!"))
 
-(defn calculate
-  [text]
-  0
+(defn calculate [text]
+  (if (= text "")
+    0
+    (Integer/parseInt text)
+  )
 )
