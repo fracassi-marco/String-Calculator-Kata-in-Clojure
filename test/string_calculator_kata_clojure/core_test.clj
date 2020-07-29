@@ -25,3 +25,11 @@
     )
   )
 )
+
+(deftest handle-an-unknown-amount-of-numbers
+  (testing "sum five values"
+    (let [sum (calculate "1,2,3,4,5")]
+      (is (= sum 15))
+    )
+  )
+)
