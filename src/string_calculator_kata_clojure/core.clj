@@ -3,11 +3,6 @@
 
 (require '[clojure.string :as str])  
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
-
 (defn sum [texts]
   (reduce + (map (fn [x] (Integer/parseInt x)) texts))
 )
@@ -17,4 +12,9 @@
     0
     (sum (str/split text #","))
   )
+)
+
+(defn -main  
+  [& args]  
+  (println (str "The sum is " (calculate (first args))))
 )

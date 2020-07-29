@@ -6,6 +6,12 @@ It's my first experience  with Clojure, I try to solve the [String Calculator Ka
 
 `lein test`
 
+## Run from command line
+
+`lein run 9,5
+The sum is 14
+`
+
 ## License
 
 Copyright © 2020 FIXME
