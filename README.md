@@ -1,32 +1,10 @@
-# string-calculator-kata-clojure
+# String Calculator Kata in Clojure
 
-FIXME: description
+It's my first experience  with Clojure, I try to solve the [String Calculator Kata](https://github.com/xpeppers/string-calculator-kata)
 
-## Installation
+## Run test
 
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar string-calculator-kata-clojure-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+`lein test`
 
 ## License
 
