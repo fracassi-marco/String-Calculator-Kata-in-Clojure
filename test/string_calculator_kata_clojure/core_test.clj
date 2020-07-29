@@ -4,14 +4,24 @@
 
 (deftest empty-string-is-0
   (testing "empty string is 0"
-    (def sum (calculate ""))
-    (is (= sum 0))
+    (let [sum (calculate "")]
+      (is (= sum 0))
+    )
   )
 )
 
 (deftest sum-one-value
   (testing "sum one value"
-    (def sum (calculate "8"))
-    (is (= sum 8))
+    (let [sum (calculate "8")]
+      (is (= sum 8))
+    )
+  )
+)
+
+(deftest sum-two-values
+  (testing "sum tho values"
+    (let [sum (calculate "8,2")]
+      (is (= sum 10))
+    )
   )
 )
