@@ -3,14 +3,22 @@
 
 (require '[clojure.string :as str])  
 
-(defn sum [texts]
-  (reduce + (map (fn [x] (Integer/parseInt x)) texts))
+(defn sum [numbers]
+  (reduce + numbers)
+)
+
+(defn mapToInt [texts]
+  (map (fn [x] (Integer/parseInt x)) texts)
+)
+
+(defn splitBy [separator, text]
+  (str/split text separator)
 )
 
 (defn calculate [text]  
   (if (= text "")
     0
-    (sum (str/split text #","))
+    (sum (mapToInt (splitBy #"," text)))
   )
 )
 
