@@ -15,10 +15,31 @@
   (str/split text separator)
 )
 
+(defn separator [text]
+  (if (str/starts-with? text "//")
+    (re-pattern (first (splitBy #"\n" (str/replace text #"//" ""))))
+    #"(,|\n)"
+  )
+)
+
+(defn subject [text]
+  (if (str/starts-with? text "//")
+    (last (splitBy #"\n" text))
+    text
+  )
+)
+
 (defn calculate [text]  
   (if (= text "")
     0
-    (sum (mapToInt (splitBy #"(,|\n)" text)))
+    (do
+      (let [
+        separator (separator text)
+        subject (subject text)
+        ]
+        (sum (mapToInt (splitBy separator subject)))
+      )
+    )
   )
 )
 

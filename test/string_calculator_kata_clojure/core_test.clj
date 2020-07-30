@@ -41,3 +41,11 @@
     )
   )
 )
+
+(deftest support-different-delimiters
+  (testing "support different delimiters"
+    (let [sum (calculate "//;\n1;2")]
+      (is (= sum 3))
+    )
+  )
+)
