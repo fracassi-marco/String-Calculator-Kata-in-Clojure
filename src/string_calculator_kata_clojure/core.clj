@@ -18,7 +18,7 @@
 (defn calculate [text]  
   (if (= text "")
     0
-    (sum (mapToInt (splitBy #"," text)))
+    (sum (mapToInt (splitBy #"(,|\n)" text)))
   )
 )
 

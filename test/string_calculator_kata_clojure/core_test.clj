@@ -33,3 +33,11 @@
     )
   )
 )
+
+(deftest handle-new-lines-between-numbers
+  (testing "handle new lines between numbers"
+    (let [sum (calculate "1\n2,3")]
+      (is (= sum 6))
+    )
+  )
+)
