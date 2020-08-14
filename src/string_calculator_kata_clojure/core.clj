@@ -7,8 +7,28 @@
   (reduce + numbers)
 )
 
-(defn mapToInt [texts]
-  (map (fn [x] (Integer/parseInt x)) texts)
+(comment "
+      (cond
+        (< number 0) (do
+          (println "minore di 0")
+          (throw (Exception. "Wrong input."))
+        )
+        (>= number 0) (do
+          (println "maggiore di 0")
+        )                      
+      )      
+")
+
+(defn mapToInt [texts]  
+  (let [numbers (map (fn [x] (Integer/parseInt x)) texts)]
+    (let [negatives (filter (fn [x] (< x 0)) numbers)]
+      (if (first negatives)
+        (throw (Exception. (str "negatives not allowed: " (first negatives))))        
+      )  
+    )
+    
+    numbers
+  )
 )
 
 (defn splitBy [separator, text]
@@ -36,7 +56,7 @@
       (let [
         separator (separator text)
         subject (subject text)
-        ]
+        ]        
         (sum (mapToInt (splitBy separator subject)))
       )
     )

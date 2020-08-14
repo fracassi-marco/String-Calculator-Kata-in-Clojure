@@ -49,3 +49,9 @@
     )
   )
 )
+
+(deftest negative-numbers-throws-exception
+  (testing "negative numbers throws exception"    
+    (is (thrown-with-msg? Exception #"negatives not allowed: -1" (calculate "1,4,-1")))
+  )
+)
