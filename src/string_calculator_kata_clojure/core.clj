@@ -7,18 +7,6 @@
   (reduce + numbers)
 )
 
-(comment "
-      (cond
-        (< number 0) (do
-          (println "minore di 0")
-          (throw (Exception. "Wrong input."))
-        )
-        (>= number 0) (do
-          (println "maggiore di 0")
-        )                      
-      )      
-")
-
 (defn mapToInt [texts]  
   (let [numbers (map (fn [x] (Integer/parseInt x)) texts)]
     (let [negatives (filter (fn [x] (< x 0)) numbers)]
