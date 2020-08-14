@@ -55,3 +55,11 @@
     (is (thrown-with-msg? Exception #"negatives not allowed: -1" (calculate "1,4,-1")))
   )
 )
+
+(deftest ignore-big-numbers
+  (testing "numbers bigger than 1000 should be ignored"
+    (let [sum (calculate "2,1001")]
+      (is (= sum 2))
+    )
+  )
+)

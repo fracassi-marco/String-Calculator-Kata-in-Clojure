@@ -15,7 +15,7 @@
       )  
     )
     
-    numbers
+    (filter (fn [x] (< x 1000)) numbers)
   )
 )
 
