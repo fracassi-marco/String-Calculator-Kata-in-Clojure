@@ -7,6 +7,10 @@
   (reduce + numbers)
 )
 
+(defn lessThan1001 [x]
+  (< x 1001)
+)
+
 (defn mapToInt [texts]  
   (let [numbers (map (fn [x] (Integer/parseInt x)) texts)]
     (let [negatives (filter (fn [x] (< x 0)) numbers)]
@@ -15,7 +19,7 @@
       )  
     )
     
-    (filter (fn [x] (< x 1000)) numbers)
+    (filter lessThan1001 numbers)
   )
 )
 

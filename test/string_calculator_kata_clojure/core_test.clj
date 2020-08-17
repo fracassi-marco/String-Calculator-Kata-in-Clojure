@@ -63,3 +63,11 @@
     )
   )
 )
+
+(deftest max-valid-numebr-is-1000
+  (testing "do not ignore 1000"
+    (let [sum (calculate "2,1000")]
+      (is (= sum 1002))
+    )
+  )
+)
